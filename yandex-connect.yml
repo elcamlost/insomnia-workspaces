@@ -1,0 +1,1354 @@
+_type: export
+__export_format: 4
+__export_date: 2019-05-09T13:58:51.374Z
+__export_source: insomnia.desktop.app:v6.5.1
+resources:
+  - _id: req_d88e76d9b6794d8aa4523e4d8ef9f5dd
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body: {}
+    created: 1557404420371
+    description: ""
+    headers: []
+    isPrivate: false
+    metaSortKey: -1557403841660
+    method: GET
+    modified: 1557406185448
+    name: __BASE__
+    parameters: []
+    parentId: wrk_62af6fa9c4194447898c300d42877b12
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/"
+    _type: request
+  - _id: wrk_62af6fa9c4194447898c300d42877b12
+    created: 1557403706666
+    description: ""
+    modified: 1557403706666
+    name: Yandex.Connect
+    parentId: null
+    _type: workspace
+  - _id: req_4e323544c7b8442bac57ec55f44baf49
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body: {}
+    created: 1557403993943
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/users/read-users-list-docpage/
+
+
+      ```
+
+      GET /v6/users/?
+
+      fields=<параметр1>,<параметр2>, ...
+
+      &id=<id1>,<id2>, ...
+
+      &nickname=<nickname1,nickname2,... >
+
+      &department_id=<id_отдела1>,<id_отдела2>, ...
+
+      &recursive_department_id=<id_отдела1>,<id_отдела2>, ...
+
+      &group_id=<id_команды1>,<id_команды2>,...
+
+      &recursive_group_id=<id_команды1>,<id_команды2>,...
+
+      &is_dismissed=<true|false|ignore>
+
+      &page=<номер страницы>
+
+      &per_page=<число позиций на странице>
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Accept: application/json
+
+      ```
+    headers: []
+    isPrivate: false
+    metaSortKey: -1557403993943
+    method: GET
+    modified: 1557407100011
+    name: Просмотреть список сотрудников
+    parameters:
+      - disabled: false
+        id: pair_21d0c1b379674b65b3f3da7293f8b348
+        name: fields
+        value: is_robot,external_id,position,is_dismissed,email,departments,gender,created,name,nickname,groups,is_admin
+      - disabled: true
+        id: pair_8702b86ac1ad475ca8cae463941b9a9a
+        name: id
+        value: ""
+      - disabled: true
+        id: pair_1a89403437ed46caadfc277c8ad7b6e8
+        name: nickname
+        value: ""
+      - disabled: true
+        id: pair_27efc588dab74c65bff2fc173caae6fd
+        name: department_id
+        value: ""
+      - disabled: true
+        id: pair_10c15f507c6f494ba6823a3ba918a974
+        name: recursive_department_id
+        value: ""
+      - disabled: true
+        id: pair_25a32cb88eaf441394294c831ca9225e
+        name: group_id
+        value: ""
+      - disabled: true
+        id: pair_27049e3265e947f6a2c5ca1605e81413
+        name: recursive_group_id
+        value: ""
+      - disabled: true
+        id: pair_4389603c990d45d19ae8863d3529e510
+        name: is_dismissed
+        value: ""
+      - disabled: true
+        id: pair_8c3ffa13af924ed5b456198972490d47
+        name: page
+        value: ""
+      - disabled: true
+        id: pair_6080763f39674fa0a6a393194a7c999e
+        name: per_page
+        value: ""
+    parentId: fld_25a9252c18d1471bac903b4a73a396b8
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/"
+    _type: request
+  - _id: fld_25a9252c18d1471bac903b4a73a396b8
+    created: 1557403741578
+    description: ""
+    environment:
+      base_url: "{{ base_url  }}/users"
+    metaSortKey: -1557403841610
+    modified: 1557404024313
+    name: Сотрудники
+    parentId: wrk_62af6fa9c4194447898c300d42877b12
+    _type: request_group
+  - _id: req_aa00483fa6bc4c33b39233664f7bb9ce
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body: {}
+    created: 1557404482116
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/users/read-user-docpage/
+
+
+      ```
+
+      GET /v6/users/<user_id>/
+
+      fields=<параметр1>,<параметр2>, ...
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Accept: application/json
+
+      ```
+    headers: []
+    isPrivate: false
+    metaSortKey: -1557403917801.5
+    method: GET
+    modified: 1557407120337
+    name: Просмотреть профиль сотрудника
+    parameters:
+      - id: pair_3a0532d71cfc417686857f3a8380220e
+        name: fields
+        value: about, aliases, birthday, contacts, created, department,
+          department_id, departments, email, external_id, first_name, gender,
+          groups, id, is_admin, is_dismissed, is_enabled, is_outstaff, is_robot,
+          karma, language, last_name, login, middle_name, name, nickname,
+          org_id, position, position_plain, recovery_email, role, service_slug,
+          services, timezone, updated_at, user_type
+      - id: pair_f75ddd8013f742b0b7261e95ac0d3222
+        name: ""
+        value: ""
+    parentId: fld_25a9252c18d1471bac903b4a73a396b8
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/{% prompt 'Введите пользователя', '', '', '', false %}/"
+    _type: request
+  - _id: req_8d58f279e7dd447a8bcd52a918881439
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body:
+      mimeType: application/json
+      text: |-
+        {
+         "department_id": "<id отдела>",
+         "gender": "<male|female>",
+         "is_admin": "<true|false>",
+         "is_dismissed": "<true|false>",
+         "name": {
+                  "first": "<имя_сотрудника>",
+                  "last": "<фамилия_сотрудника>",
+                  "middle": "<отчество сотрудника>"
+                 },
+         "nickname": "i.rassadin",
+         "password": "<пароль сотрудника>",
+         "position": "Системный администратор"
+        }
+    created: 1557405097645
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/users/add-user-docpage/
+
+
+      ```
+
+      POST /v6/users/
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Content-Type: application/json
+
+
+      {
+       "about": "<описание сотрудника>",
+       "aliases": [<псевдоним1>, <псевдоним2>, ...],
+       "birthday": "гггг-мм-дд",
+       "contacts": [ {
+                      "alias": <true|false>,
+                      "label": "<описание|заголовок контакта>",
+                      "main": <true|false>,
+                      "synthetic": <true|false>,
+                      "type": "<email|phone_extension|phone|site|icq|twitter|facebook|skype>",
+                      "value": "<значение контакта>"
+       	       },
+                     ...
+                   ],
+       "department_id": "<id отдела>",
+       "gender": "<male|female>",
+       "is_admin": "<true|false>",
+       "is_dismissed": "<true|false>",
+       "name": {
+                "first": "<имя_сотрудника>",
+                "last": "<фамилия_сотрудника>",
+                "middle": "<отчество сотрудника>"
+               },
+       "nickname": "<логин>",
+       "password": "<пароль сотрудника>",
+       "position": "<должность>"
+      }
+
+      ```
+    headers:
+      - id: pair_e43b721dcdc24c6d995cc9f8b628cdbc
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1557403917751.5
+    method: POST
+    modified: 1557407139319
+    name: Добавить сотрудника
+    parameters: []
+    parentId: fld_25a9252c18d1471bac903b4a73a396b8
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/"
+    _type: request
+  - _id: req_f33e247a72cd4068b24b4110f5790e9e
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body:
+      mimeType: application/json
+      text: |-
+        {
+         "department_id": "<id отдела>",
+         "gender": "<male|female>",
+         "is_admin": "<true|false>",
+         "is_dismissed": "<true|false>",
+         "name": {
+                  "first": "<имя_сотрудника>",
+                  "last": "<фамилия_сотрудника>",
+                  "middle": "<отчество сотрудника>"
+                 },
+         "nickname": "i.rassadin",
+         "password": "<пароль сотрудника>",
+         "position": "Системный администратор"
+        }
+    created: 1557406317646
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/users/edit-user-docpage/
+
+
+      ```
+
+      PATCH /v6/users/<user_id>/
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Content-Type: application/json
+
+
+      {
+       "about": "<описание сотрудника>",
+       "birthday": "гггг-мм-дд",
+       "contacts": [ {
+                      "alias": <true|false>,
+                      "label": "<заголовок контакта>",
+                      "main": <true|false>,
+                      "synthetic": <true|false>,
+                      "type": "<email|phone_extension|phone|site|icq|twitter|facebook|skype>",
+                      "value": "<значение контакта>"
+                     },
+                     ...
+                   ],
+       "department_id": "<id отдела>",
+       "gender": "<male|female>",
+       "is_admin": "<true|false>",
+       "is_dismissed": "<true|false>",
+       "name": {
+                "first": "<имя_сотрудника>",
+                "last": "<фамилия_сотрудника>",
+                "middle": "<отчество сотрудника>"
+               },
+       "password": "<пароль сотрудника>",
+       "password_change_required": "<старый пароль>",
+       "position": "<должность>"
+      }
+
+      ```
+    headers:
+      - id: pair_e43b721dcdc24c6d995cc9f8b628cdbc
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1557403879705.75
+    method: PATCH
+    modified: 1557407157999
+    name: Изменить профиль сотрудника
+    parameters: []
+    parentId: fld_25a9252c18d1471bac903b4a73a396b8
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/{% prompt 'Введите пользователя', '', '', '', false %}/"
+    _type: request
+  - _id: req_05189cb7574140d8a0a3c3b3173a33b8
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body:
+      mimeType: application/json
+      text: |-
+        
+        {
+          "name": "<псевдоним>"
+        }
+    created: 1557406418675
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/users/add-user-aliases-docpage/
+
+
+      ```
+
+      POST /v6/users/<user_id>/aliases/
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Content-Type: application/json
+
+
+      {
+
+      name: <псевдоним>
+
+      }
+
+      ```
+    headers:
+      - id: pair_e43b721dcdc24c6d995cc9f8b628cdbc
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1557403860682.875
+    method: POST
+    modified: 1557407176960
+    name: Создать псевдоним сотрудника
+    parameters: []
+    parentId: fld_25a9252c18d1471bac903b4a73a396b8
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/{% prompt 'Введите пользователя', '', '', '', false
+      %}/aliases/"
+    _type: request
+  - _id: req_2e448d19e5fc418395997cde3d63f02d
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body: {}
+    created: 1557405252895
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/departments/read-departments-list-docpage/
+
+
+      ```
+
+      GET /v6/departments/?
+
+      fields=<параметр1>,<параметр2>, ...
+
+      &page=<номер страницы>
+
+      &per_page=<число позиций на странице>
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Accept: application/json
+
+      ```
+    headers: []
+    isPrivate: false
+    metaSortKey: -1557405277693
+    method: GET
+    modified: 1557407193934
+    name: Просмотреть список отделов
+    parameters:
+      - id: pair_3fc26e711d534b489b52b4a58d35704b
+        name: fields
+        value: name,email,external_id,removed,id,members_count
+      - disabled: true
+        id: pair_b66542f2432047ffaf88a1664844a041
+        name: page
+        value: ""
+      - disabled: true
+        id: pair_0de3beaee8c041848e653d68dccb51ae
+        name: per_page
+        value: ""
+    parentId: fld_40b1b47a83fd43e8a3afe5c12857082f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/"
+    _type: request
+  - _id: fld_40b1b47a83fd43e8a3afe5c12857082f
+    created: 1557403745845
+    description: ""
+    environment:
+      base_url: "{{ base_url  }}/departments"
+    metaSortKey: -1557403841585
+    modified: 1557406157854
+    name: Отделы
+    parentId: wrk_62af6fa9c4194447898c300d42877b12
+    _type: request_group
+  - _id: req_ce48dacd616f4b0ea70f3e479913ac5c
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body: {}
+    created: 1557405410912
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/departments/read-department-docpage/
+
+
+      ```
+
+      GET /v6/departments/<department_id>/
+
+      fields=<параметр1>,<параметр2>, ..
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Accept: application/json
+
+      ```
+    headers: []
+    isPrivate: false
+    metaSortKey: -1557404635818
+    method: GET
+    modified: 1557407208699
+    name: Просмотреть параметры отдела
+    parameters:
+      - id: pair_3fc26e711d534b489b52b4a58d35704b
+        name: fields
+        value: name,email,external_id,removed,id,parents,label,created,parent,description,members_count,head
+      - disabled: true
+        id: pair_b66542f2432047ffaf88a1664844a041
+        name: page
+        value: ""
+      - disabled: true
+        id: pair_0de3beaee8c041848e653d68dccb51ae
+        name: per_page
+        value: ""
+    parentId: fld_40b1b47a83fd43e8a3afe5c12857082f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/{% prompt 'Введите ID отдела', '', '', '', false %}/"
+    _type: request
+  - _id: req_d338e323c41a439bac32af7e02d17759
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body:
+      mimeType: application/json
+      text: |-
+        
+        {
+         "name": "Отдел продвижения",
+         "label": "seo-managers",
+         "parent_id": 1
+        }
+    created: 1557405527122
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/departments/create-department-docpage/
+
+
+      ```
+
+      POST /v6/departments/
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Content-Type: application/json
+
+
+      {
+       "description": <описаниие отдела>,
+       "head_id": <id руководителя отдела>,
+       "label": "<рассылка отдела>",
+       "name": "<название отдела>",
+       "parent_id": <id родительского отдела>
+      }
+
+      ```
+    headers:
+      - id: pair_e289b8743f774a948eb0390a52ea30ab
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1557404314880.5
+    method: POST
+    modified: 1557407223454
+    name: Создать отдел
+    parameters:
+      - disabled: true
+        id: pair_b66542f2432047ffaf88a1664844a041
+        name: page
+        value: ""
+      - disabled: true
+        id: pair_0de3beaee8c041848e653d68dccb51ae
+        name: per_page
+        value: ""
+    parentId: fld_40b1b47a83fd43e8a3afe5c12857082f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/"
+    _type: request
+  - _id: req_f95a69cddb814ed99665c9378f0a412f
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body:
+      mimeType: application/json
+      text: |-
+        
+        {
+         "name": "Отдел продвижения",
+         "parent_id": 1
+        }
+    created: 1557405958156
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/departments/edit-department-docpage/
+
+
+      ```
+
+      PATCH /v6/departments/<department_id>/
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Content-Type: application/json
+
+
+      {
+       "description": <описаниие отдела>,
+       "head_id": <id руководителя отдела>,
+       "label": "<рассылка отдела>",
+       "name": "<название отдела>",
+       "parent_id": <id родительского отдела>
+      }
+
+      ```
+    headers:
+      - id: pair_e289b8743f774a948eb0390a52ea30ab
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1557404154411.75
+    method: PATCH
+    modified: 1557407239184
+    name: Изменить параметры отдела
+    parameters:
+      - disabled: true
+        id: pair_b66542f2432047ffaf88a1664844a041
+        name: page
+        value: ""
+      - disabled: true
+        id: pair_0de3beaee8c041848e653d68dccb51ae
+        name: per_page
+        value: ""
+    parentId: fld_40b1b47a83fd43e8a3afe5c12857082f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/{% prompt 'Введите ID отдела', '', '', '', false %}/"
+    _type: request
+  - _id: req_35a1753685624aa3bc54a524f1b1c34d
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body: {}
+    created: 1557406080963
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/departments/delete-department-docpage/
+
+
+      ```
+
+      DELETE /v6/departments/<department_id>/
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      ```
+    headers: []
+    isPrivate: false
+    metaSortKey: -1557404074177.375
+    method: DELETE
+    modified: 1557407258909
+    name: Удалить отдел
+    parameters:
+      - disabled: true
+        id: pair_b66542f2432047ffaf88a1664844a041
+        name: page
+        value: ""
+      - disabled: true
+        id: pair_0de3beaee8c041848e653d68dccb51ae
+        name: per_page
+        value: ""
+    parentId: fld_40b1b47a83fd43e8a3afe5c12857082f
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/{% prompt 'Введите ID отдела', '', '', '', false %}/"
+    _type: request
+  - _id: req_d0b21b62f2f4460b8de2a71bbc2f0904
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body: {}
+    created: 1557405933757
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/groups/read-groups-list-docpage/
+
+
+      ```
+
+      GET /v6/groups/?
+
+      fields=<параметр1>,<параметр2>, ...
+
+      &page=<номер страницы>
+
+      &per_page=<число позиций на странице>
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Accept: application/json
+
+      ```
+    headers: []
+    isPrivate: false
+    metaSortKey: -1557405931485
+    method: GET
+    modified: 1557407278056
+    name: Просмотреть список команд
+    parameters:
+      - id: pair_0d938906778c4a4e8b4d8fbfc39d5923
+        name: fields
+        value: name,email,external_id,id,members_count
+    parentId: fld_d050e9aef4e243498d3dce5c321bf2b7
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/"
+    _type: request
+  - _id: fld_d050e9aef4e243498d3dce5c321bf2b7
+    created: 1557403749480
+    description: ""
+    environment:
+      base_url: "{{ base_url  }}/groups"
+    metaSortKey: -1557403841572.5
+    modified: 1557406160929
+    name: Команды
+    parentId: wrk_62af6fa9c4194447898c300d42877b12
+    _type: request_group
+  - _id: req_670e137c240c4be897387073dfb71e88
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body: {}
+    created: 1557406604419
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/groups/read-group-docpage/
+
+
+      ```
+
+      GET /v6/groups/<group_id>/
+
+      fields=<параметр1>,<параметр2>, ...
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Accept: application/json
+
+      ```
+    headers: []
+    isPrivate: false
+    metaSortKey: -1557405604589
+    method: GET
+    modified: 1557407291046
+    name: Просмотреть параметры команды
+    parameters:
+      - id: pair_0d938906778c4a4e8b4d8fbfc39d5923
+        name: fields
+        value: admins, aliases, all_users, author, author_id, created, description,
+          description_plain, email, external_id, id, label, maillist_type,
+          member_of, members, members_count, name, name_plain, org_id, removed,
+          resource_id, type, uid
+    parentId: fld_d050e9aef4e243498d3dce5c321bf2b7
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/{% prompt 'Введите ID команды', '', '', '', false %}/"
+    _type: request
+  - _id: req_97c5671312fc46669b6023d6f71903db
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"admins": [
+        		{
+        			"id": 0,
+        			"type": "user"
+        		}
+        	],
+        	"description": "<описание>",
+        	"label": "<названиерассылки>",
+        	"members": [
+        		{
+        			"type": "<user|group|department>",
+        			"id": 0
+        		}
+        	],
+        	"name": "<название команды>",
+        	"type": "<generic|organization_admin|robots|department_head>"
+        }
+    created: 1557406677707
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/groups/create-group-docpage/
+
+
+      ```
+
+      POST /v6/groups/
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Content-Type: application/json
+
+
+      {
+
+      admins": [
+           {
+           "id": <идентификатор администратора>
+           "type": "user"
+           },
+           ...
+        ]
+      description": "<описание>",
+
+      label": "<название рассылки>",
+
+      members": [
+         {
+         "type": "<user|group|department>",
+         "id": <идентификатор>
+         },
+         ...
+       ]
+      "name": "<название команды>",
+
+      "type": "<generic|organization_admin|robots|department_head>
+
+      }
+
+      ```
+    headers:
+      - id: pair_88d3c42cba234d7d9438990f9b51249f
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1557405441141
+    method: POST
+    modified: 1557407304074
+    name: Создать команду
+    parameters: []
+    parentId: fld_d050e9aef4e243498d3dce5c321bf2b7
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/"
+    _type: request
+  - _id: req_79449c138084469e9592b7524d9b399a
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"admins": [
+        		{
+        			"id": 0,
+        			"type": "user"
+        		}
+        	],
+        	"description": "<описание>",
+        	"label": "<названиерассылки>",
+        	"members": [
+        		{
+        			"type": "<user|group|department>",
+        			"id": 0
+        		}
+        	],
+        	"name": "<название команды>",
+        	"type": "<generic|organization_admin|robots|department_head>"
+        }
+    created: 1557406841742
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/groups/edit-group-docpage/
+
+
+      ```
+
+      PATCH /v6/groups/<group_id>/
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Accept: application/json
+
+
+      {
+
+      admins": [
+           {
+           "id": <идентификатор администратора>
+           "type": "user"
+           },
+           ...
+        ]
+      description": "<описание>",
+
+      label": "<название рассылки>",
+
+      members": [
+         {
+         "type": "<user|group|department>",
+         "id": <идентификатор>
+         },
+         ...
+       ]
+      "name": "<название команды>",
+
+      "type": "<generic|organization_admin|robots|department_head>
+
+      }
+
+      ```
+    headers:
+      - id: pair_88d3c42cba234d7d9438990f9b51249f
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1557405359417
+    method: PATCH
+    modified: 1557407319950
+    name: Изменить параметры команды
+    parameters: []
+    parentId: fld_d050e9aef4e243498d3dce5c321bf2b7
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/{% prompt 'Введите ID команды', '', '', '', false %}/"
+    _type: request
+  - _id: req_abaa20bea7b54dab9c8038324467e1a5
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body: {}
+    created: 1557406879707
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/groups/read-group-members-list-docpage/
+
+
+      ```
+
+      GET /v6/groups/<group_id>/members/
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Accept: application/json
+
+      ```
+    headers: []
+    isPrivate: false
+    metaSortKey: -1557405359367
+    method: GET
+    modified: 1557407339225
+    name: Просмотреть список участников команды
+    parameters: []
+    parentId: fld_d050e9aef4e243498d3dce5c321bf2b7
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/{% prompt 'Введите ID команды', '', '', '', false
+      %}/members/"
+    _type: request
+  - _id: req_6a383d618dc54e76add5ed67600fd3d2
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body:
+      mimeType: application/json
+      text: |-
+        {
+           "type": "<user|group|department>",
+           "id": 0
+        }
+    created: 1557406917515
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/groups/add-group-member-docpage/
+
+
+      ```
+
+      POST /v6/groups/<group_id>/members/
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Accept: application/json
+
+
+      {
+         "type": "<user|group|department>",
+         "id": <идентификатор>
+      }
+
+      ```
+    headers:
+      - id: pair_f3b8ed3728fd435caebfe3b8f57185c8
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1557405318530
+    method: POST
+    modified: 1557406999715
+    name: Добавить участника команды
+    parameters: []
+    parentId: fld_d050e9aef4e243498d3dce5c321bf2b7
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/{% prompt 'Введите ID команды', '', '', '', false
+      %}/members/"
+    _type: request
+  - _id: req_4d1d8789a69541b2bfe1ea8c510718eb
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body:
+      mimeType: application/json
+      text: |-
+        {
+           "type": "<user|group|department>",
+           "id": 0
+        }
+    created: 1557407021702
+    description: >-
+      https://tech.yandex.ru/connect/directory/api/concepts/groups/bulk-add-group-member-docpage/
+
+
+      ```
+
+      POST /v6/groups/<group_id>/members/bulk-update/
+
+      Host: https://api.directory.yandex.net
+
+      Authorization: OAuth <токен>
+
+      X-Org-ID: <идентификатор организации>
+
+      Accept: application/json
+
+
+      [
+       {
+        "operation_type": "<add|remove>",
+        "value": {
+         "type": "<user|group|department>",
+         "id": <идентификатор>
+         }
+       },
+       ...
+      ]
+
+      ```
+    headers:
+      - id: pair_f3b8ed3728fd435caebfe3b8f57185c8
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1557405298111.5
+    method: POST
+    modified: 1557407068392
+    name: Изменение списка участников команды
+    parameters: []
+    parentId: fld_d050e9aef4e243498d3dce5c321bf2b7
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/{% prompt 'Введите ID команды', '', '', '', false
+      %}/members/bulk-update/"
+    _type: request
+  - _id: req_59c40de6d4794081a3b2aced48e0472e
+    authentication:
+      accessTokenUrl: https://oauth.yandex.ru/authorize
+      authorizationUrl: https://oauth.yandex.ru/authorize
+      clientId: "{{ id }}"
+      clientSecret: "{{ token }}"
+      grantType: implicit
+      redirectUrl: https://oauth.yandex.ru/verification_code
+      tokenPrefix: OAuth
+      type: oauth2
+    body: {}
+    created: 1557406186977
+    description: ""
+    headers: []
+    isPrivate: false
+    metaSortKey: -1557406175553
+    method: GET
+    modified: 1557406252010
+    name: Просмотреть список организаций
+    parameters:
+      - id: pair_12e3cd644db74f00b5bbab4aed872176
+        name: fields
+        value: account, admin_id, admin_uid, billing_info, corr_acc, country,
+          created, disk_limit, disk_usage, domains, email, environment, fax,
+          has_owned_domains, head, head_id, header, id, inn, label, language,
+          law_address, logo, logo_id, maillist_type, name, name_plain, ogrn,
+          organization_type, partner_id, phone_number, preset, real_address,
+          revision, root_departments, services, shared_contacts, source,
+          subscription_plan, subscription_plan_changed_at,
+          subscription_plan_expires_at, tld, trc, user_count, vip
+    parentId: fld_b98b411c78444745b423288487cff2e3
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: "{{ base_url  }}/"
+    _type: request
+  - _id: fld_b98b411c78444745b423288487cff2e3
+    created: 1557403841560
+    description: ""
+    environment:
+      base_url: "{{ base_url  }}/organizations"
+    metaSortKey: -1557403841560
+    modified: 1557406152916
+    name: Организации
+    parentId: wrk_62af6fa9c4194447898c300d42877b12
+    _type: request_group
+  - _id: env_122bdf3d9c1983fad702e5b78d56c3a4e83d7348
+    color: null
+    created: 1557403707520
+    data:
+      base_path: v6
+      base_url: "{{ host }}/{{ base_path }}"
+      host: https://api.directory.yandex.net
+      id: ""
+      token: ""
+    isPrivate: false
+    metaSortKey: 1557403707521
+    modified: 1557410251450
+    name: Base Environment
+    parentId: wrk_62af6fa9c4194447898c300d42877b12
+    _type: environment
+  - _id: jar_122bdf3d9c1983fad702e5b78d56c3a4e83d7348
+    cookies:
+      - creation: 2019-05-09T12:17:56.226Z
+        domain: yandex.ru
+        expires: 2029-05-06T12:17:56.000Z
+        hostOnly: false
+        id: "547717107227244"
+        key: yandexuid
+        lastAccessed: 2019-05-09T12:17:56.226Z
+        maxAge: 315360000
+        path: /
+        value: "756876431557404276"
+      - creation: 2019-05-09T12:18:51.628Z
+        domain: passport.yandex.ru
+        expires: 2029-05-06T12:18:51.000Z
+        extensions:
+          - SameSite=Lax
+        hostOnly: true
+        httpOnly: true
+        id: "2999276951866079"
+        key: uniqueuid
+        lastAccessed: 2019-05-09T12:18:51.628Z
+        maxAge: 315360000
+        path: /
+        secure: true
+        value: "627057741557404331"
+      - creation: 2019-05-09T12:18:51.628Z
+        domain: passport.yandex.ru
+        expires: 1970-01-01T00:00:01.000Z
+        hostOnly: false
+        httpOnly: true
+        id: "15446700019825088"
+        key: lah
+        lastAccessed: 2019-05-09T12:20:43.080Z
+        path: /
+        secure: true
+    created: 1557403707526
+    modified: 1557404443080
+    name: Default Jar
+    parentId: wrk_62af6fa9c4194447898c300d42877b12
+    _type: cookie_jar
